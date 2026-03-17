@@ -1,21 +1,26 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Colores */
+  --color-fondo: #010101;
+  --color-morado: #c2b8db;
+  --color-rosa: #DCB3C8;
+  --color-azul: #ADBDDE;
+  --color-topo: #6F5960;
+  --color-topa: #6F5960;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer components {
+  .btn {
+    @apply m-4 p-1 rounded-full from-azul via-morado to-rosa bg-gradient-to-r;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .btn__span {
+    @apply block text-black px-4 py-2 font-semibold rounded-full bg-white hover:bg-transparent hover:text-white transition;
+  }
+
+  .card {
+    @apply w-80 bg-slate-200 rounded-2xl m-8 overflow-hidden shadow-2xl transition-transform duration-300 ease-in-out hover:scale-105;
   }
 }
 
